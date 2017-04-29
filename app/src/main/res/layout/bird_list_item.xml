@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:elevation="10dp"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@drawable/comment_background"
+    tools:context="com.example.mike.materialdesignlistviewpopup.MainActivity">
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
+
+    <LinearLayout
+        android:id="@+id/item_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/alarm_time_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:elevation="1dp"
+                android:includeFontPadding="false"
+                android:text="8:00"
+                android:textSize="65sp" />
+
+            <TextView
+                android:id="@+id/am_pm_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AM"
+                android:layout_alignBaseline="@+id/alarm_time_text_view"
+                android:layout_alignBottom="@+id/alarm_time_text_view"
+                android:layout_toEndOf="@+id/alarm_time_text_view"
+                android:layout_marginStart="7dp" />
+
+            <Switch
+                android:id="@+id/alarm_active_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="75dp"
+                android:checked="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textColor="@color/colorPrimary"
+                android:layout_alignBottom="@+id/am_pm_text_view"
+                android:layout_alignParentEnd="true" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="7dp"
+                app:srcCompat="@drawable/down_arrow_32"
+                android:backgroundTint="@android:color/transparent"
+                android:id="@+id/collapse_button"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tomorrowTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:includeFontPadding="false"
+            android:layout_marginStart="15dp"
+            android:text="Tomorrow"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/options_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:clipToPadding="false"
+        android:padding="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/day_button_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/day_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Sunday"
+                    android:layout_width="@dimen/day_button_diameter"
+                    android:layout_height="@dimen/day_button_diameter"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/off_day_selection_button_shape"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:tag="off"
+                    android:text="S"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/Monday"
+                    android:layout_width="@dimen/day_button_diameter"
+                    android:layout_height="@dimen/day_button_diameter"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/off_day_selection_button_shape"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:tag="off"
+                    android:text="M"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/Tuesday"
+                    android:layout_width="@dimen/day_button_diameter"
+                    android:layout_height="@dimen/day_button_diameter"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/off_day_selection_button_shape"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:tag="off"
+                    android:text="T"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/Wednesday"
+                    android:layout_width="@dimen/day_button_diameter"
+                    android:layout_height="@dimen/day_button_diameter"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/off_day_selection_button_shape"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:tag="off"
+                    android:text="W"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/Thursday"
+                    android:layout_width="@dimen/day_button_diameter"
+                    android:layout_height="@dimen/day_button_diameter"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/off_day_selection_button_shape"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:tag="off"
+                    android:text="T"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/Friday"
+                    android:layout_width="@dimen/day_button_diameter"
+                    android:layout_height="@dimen/day_button_diameter"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/off_day_selection_button_shape"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:tag="off"
+                    android:text="F"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/Saturday"
+                    android:layout_width="@dimen/day_button_diameter"
+                    android:layout_height="@dimen/day_button_diameter"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/off_day_selection_button_shape"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:tag="off"
+                    android:text="S"
+                    android:textColor="@color/colorWhite" />
+
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/repeat_days_checkbox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:text="Repeat" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/alarm_type_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/change_alarm_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:drawableStart="@drawable/bell_icon"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:stateListAnimator="@null" />
+
+            <TextView
+                android:id="@+id/alarm_type_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/vibrateCheckBox"
+                android:layout_marginStart="60dp"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/vibrateCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/change_alarm_button"
+                android:layout_alignBottom="@+id/change_alarm_button"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="22dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center_vertical"
+                android:text="Vibrate" />
+
+        </RelativeLayout>
+
+
+        <EditText
+            android:id="@+id/label_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Label"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin" />
+
+        <Button
+            android:id="@+id/delete_alarm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="7dp"
+            android:backgroundTint="@android:color/transparent"
+            android:drawableRight="@android:drawable/ic_menu_delete"
+            android:stateListAnimator="@null" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="5"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+    <!--<LinearLayout-->
+
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/alarm_time_text_view"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="10dp"-->
+    <!--android:layout_weight="2"-->
+    <!--android:elevation="1dp"-->
+    <!--android:includeFontPadding="false"-->
+    <!--android:text="8:00"-->
+    <!--android:textSize="54sp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/am_pm_text_view"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="AM" />-->
+
+    <!--<Switch-->
+    <!--android:id="@+id/alarm_active_switch"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginEnd="20dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:checked="true"-->
+    <!--android:focusable="false"-->
+    <!--android:focusableInTouchMode="false"-->
+    <!--android:textColor="@color/colorPrimary" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/collapse_button"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:backgroundTint="@android:color/transparent"-->
+    <!--android:drawableLeft="@android:drawable/arrow_down_float"-->
+    <!--android:stateListAnimator="@null" />-->
+
+    <!--</LinearLayout>-->
