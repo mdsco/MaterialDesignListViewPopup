@@ -1,18 +1,15 @@
 package com.example.mike.materialdesignlistviewpopup;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.transition.AutoTransition;
-import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -36,20 +33,27 @@ public class CardViewRecyclerViewAdapter extends RecyclerView.Adapter<CardViewRe
         final AutoTransition transition = new AutoTransition();
         transition.setDuration(100);
 
+
+
         cardViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
 
             boolean visible = false;
 
             @Override
             public void onClick(View view) {
-                TextView hiddenText = (TextView) view.findViewById(R.id.hiddenText);
+
+                Log.v("Initial elevation", view.getElevation() + "");
+                Log.v("Initial z", view.getZ() + "");
+
+
+                LinearLayout hiddenLayout = (LinearLayout) view.findViewById(R.id.hiddenLayout);
 
                 visible = !visible;
-                float elevation = visible ? 10.0f : 5.0f;
+                float elevation = visible ? 10.0f : 7.0f;
                 float zVal = visible ? 20.0f : 5.0f;
 
                 TransitionManager.beginDelayedTransition(parent, transition);
-                hiddenText.setVisibility(visible ? View.VISIBLE : View.GONE);
+                hiddenLayout.setVisibility(visible ? View.VISIBLE : View.GONE);
                 view.setElevation(elevation);
                 view.setTranslationZ(zVal);
             }

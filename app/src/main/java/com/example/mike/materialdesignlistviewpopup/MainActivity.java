@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
 
         names = new ArrayList<String>();
 
-        names.add("Bob");
-        names.add("Joe");
-        names.add("Fronk");
-        names.add("Mary");
-        names.add("Jules");
-        names.add("Shaina");
-        names.add("Andy");
-        names.add("Joanna");
+        names.add("8:00");
+        names.add("11:23");
+        names.add("88:88");
+        names.add("24:00");
+        names.add("1:11");
+        names.add("4:45");
+        names.add("9:00");
+        names.add("12:27");
 
         CardViewRecyclerViewAdapter adapter = new CardViewRecyclerViewAdapter(getApplicationContext(), names);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
